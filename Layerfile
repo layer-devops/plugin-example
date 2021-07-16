@@ -1,0 +1,8 @@
+FROM vm/ubuntu:18.04
+RUN apt-get update && apt-get install python3
+
+COPY . .
+
+RUN BACKGROUND python3 -m http.server 80
+EXPOSE WEBSITE http://localhost:80
+
